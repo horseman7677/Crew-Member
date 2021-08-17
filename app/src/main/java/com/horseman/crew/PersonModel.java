@@ -1,16 +1,18 @@
 package com.horseman.crew;
 
 public class PersonModel {
-    private String image, name, agency, status;
+    private String image, name, agency, status, wikipedia;
 
     public PersonModel() {
     }
 
-    public PersonModel(String image, String name, String agency, String status) {
+
+    public PersonModel(String image, String name, String agency, String status, String wikipedia) {
         this.image = image;
         this.name = name;
         this.agency = agency;
         this.status = status;
+        this.wikipedia = wikipedia;
     }
 
     public String getImage() {
@@ -43,5 +45,13 @@ public class PersonModel {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getWikipedia() {
+        return wikipedia;
+    }
+
+    public void setWikipedia(String wikipedia) {
+        this.wikipedia = wikipedia;
     }
 }

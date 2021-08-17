@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(),Details.class).putExtra("position",position));
+                startActivity(new Intent(getApplicationContext(), Details.class).putExtra("position", position));
             }
         });
 
@@ -70,11 +70,13 @@ public class MainActivity extends AppCompatActivity {
                                 String agency = jsonObject.getString("agency");
                                 String status = jsonObject.getString("status");
                                 String image = jsonObject.getString("image");
+                                String wikipedia = jsonObject.getString("wikipedia");
+                                System.out.println(wikipedia);
 
-                                personModel = new PersonModel(image,name,agency,status);
+                                personModel = new PersonModel(image, name, agency, status, wikipedia);
                                 personModelList.add(personModel);
                             }
-                            customAdapter = new CustomAdapter(MainActivity.this,personModelList);
+                            customAdapter = new CustomAdapter(MainActivity.this, personModelList);
                             listView.setAdapter(customAdapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
