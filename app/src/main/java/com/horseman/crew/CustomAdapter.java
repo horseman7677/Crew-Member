@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class CustomAdapter extends ArrayAdapter<PersonModel> {
 
         name.setText(personModelList.get(position).getName());
         String url = personModelList.get(position).getImage();
-        Picasso.get().load(url).into(imageView);
+        Glide.with(context).load(url).into(imageView);
 
         return view;
     }

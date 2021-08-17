@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 public class Details extends AppCompatActivity {
     private int postionPerson;
@@ -30,7 +30,7 @@ public class Details extends AppCompatActivity {
         image = findViewById(R.id.dImage);
 
         String url = MainActivity.personModelList.get(postionPerson).getImage();
-        Picasso.get().load(url).into(image);
+        Glide.with(this).load(url).into(image);
         name.setText(MainActivity.personModelList.get(postionPerson).getName());
         agency.setText(MainActivity.personModelList.get(postionPerson).getAgency());
         status.setText(MainActivity.personModelList.get(postionPerson).getStatus());
